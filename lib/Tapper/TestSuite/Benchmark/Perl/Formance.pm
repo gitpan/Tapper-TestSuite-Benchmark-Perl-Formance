@@ -3,7 +3,7 @@ package Tapper::TestSuite::Benchmark::Perl::Formance;
 use strict;
 use warnings;
 
-our $VERSION = '3.000002';
+our $VERSION = '3.000003';
 
 use IO::Socket::INET;
 use Benchmark::Perl::Formance;
@@ -52,8 +52,9 @@ sub _starttime_test_program {
 }
 
 sub _perl_gitversion {
-        my $perlpath         = "$^X";
-        my $perl_gitversion  = "$perlpath-gitversion";
+        my $perlpath = "$^X";
+        $perlpath    =~ s,/[^/]*$,,;
+        my $perl_gitversion  = "$perlpath/perl-gitversion";
 
         if (-x $perl_gitversion) {
                 my $gitversion = qx!$perl_gitversion! ;
@@ -91,8 +92,9 @@ sub tapper_section_meta
         $output   .= "# Tapper-language-description:    Perl-$]\n";
         $output   .= "# Tapper-changeset:               $gitversion\n" if $gitversion;
         $output   .= "# Tapper-starttime-test-program:  $starttime_test_program\n";
-        $output   .= "# Tapper-ticket-url:              http://speed.perlformance.net/changes/?rev=$gitversion\n" if $gitversion;
-        #$output   .= "# Tapper-moreinfo-url:            http://speed.perlformance.net/changes/?rev=$gitversion\n" if $gitversion;
+        #$output   .= "# Tapper-ticket-url:              http://speed.perlformance.net/changes/?rev=$gitversion\n" if $gitversion;
+        $output   .= "# Tapper-moreinfo-url:            http://speed.perlformance.net/changes/?rev=$gitversion\n" if $gitversion;
+        return $output;
 }
 
 sub tapper_suite_meta
@@ -219,8 +221,8 @@ sub main {
 
         $output   .= "1..1\n";
         $output   .= "# Tapper-Section: metainfo\n";
-        $output   .= tapper_suite_meta;
-        $output   .= tapper_section_meta;
+        $output   .= tapper_suite_meta   || "";
+        $output   .= tapper_section_meta || "";
 
         $output   .= "1..1\n";
         $output   .= "# Tapper-Section: results\n";
