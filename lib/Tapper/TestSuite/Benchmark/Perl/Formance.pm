@@ -3,7 +3,7 @@ package Tapper::TestSuite::Benchmark::Perl::Formance;
 use strict;
 use warnings;
 
-our $VERSION = '3.000004';
+our $VERSION = '3.000005';
 
 use IO::Socket::INET;
 use Benchmark::Perl::Formance;
@@ -208,7 +208,7 @@ sub PerlFormanceResults
         my $perlformancepath = $options->{perlformancepath};
         my ($plugins, $verbose) = @$options{qw(plugins verbose)};
         my $fastmode = ($ENV{PERLFORMANCE_TESTMODE_FAST} ? "--fastmode" : "");
-        my $cmd = "$^X $perlformancepath --tapdescription='benchmarks' $fastmode -ccc -vv -p --outstyle=yaml --indent=2 $plugins --codespeed 2>&1";
+        my $cmd = "$^X $perlformancepath --tapdescription='benchmarks' $fastmode -ccc -v -p --outstyle=yaml --indent=2 $plugins --codespeed 2>&1";
         print STDERR "# $cmd\n" if $verbose >= 2;
         my $yaml = qx!$cmd!;
         return $yaml;
