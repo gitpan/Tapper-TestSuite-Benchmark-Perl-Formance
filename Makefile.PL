@@ -1,16 +1,58 @@
-use inc::Module::Install;
 
-name     'Tapper-TestSuite-Benchmark-Perl-Formance';
-all_from 'lib/Tapper/TestSuite/Benchmark/Perl/Formance.pm';
-author   'AMD OSRC Tapper Team <tapper@amd64.org>';
-license  'freebsd';
+use strict;
+use warnings;
 
-build_requires 'Test::More';
-requires 'Benchmark::Perl::Formance' => '0.22';
 
-install_script 'tapper-testsuite-benchmark-perlformance';
 
-auto_install;
+use ExtUtils::MakeMaker 6.30;
 
-WriteAll;
+
+
+my %WriteMakefileArgs = (
+  "ABSTRACT" => "Tapper - Wrapper for Benchmark::Perl::Formance",
+  "AUTHOR" => "AMD OSRC Tapper Team <tapper\@amd64.org>",
+  "BUILD_REQUIRES" => {
+    "Test::More" => 0
+  },
+  "CONFIGURE_REQUIRES" => {
+    "ExtUtils::MakeMaker" => "6.30"
+  },
+  "DISTNAME" => "Tapper-TestSuite-Benchmark-Perl-Formance",
+  "EXE_FILES" => [],
+  "LICENSE" => "open_source",
+  "NAME" => "Tapper::TestSuite::Benchmark::Perl::Formance",
+  "PREREQ_PM" => {
+    "Benchmark::Perl::Formance" => 0,
+    "Config" => 0,
+    "Getopt::Long" => 0,
+    "IO::Socket::INET" => 0,
+    "strict" => 0,
+    "warnings" => 0
+  },
+  "VERSION" => "4.0.1",
+  "test" => {
+    "TESTS" => "t/*.t"
+  }
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+
 
