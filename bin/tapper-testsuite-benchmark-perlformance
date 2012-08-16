@@ -1,4 +1,6 @@
 #! /usr/bin/perl
+# PODNAME: tapper-testsuite-benchmark-perlformance
+# ABSTRACT: Tapper - Wrapper for Benchmark::Perl::Formance
 
 use strict;
 use warnings;
@@ -6,9 +8,11 @@ use Tapper::TestSuite::Benchmark::Perl::Formance;
 
 Tapper::TestSuite::Benchmark::Perl::Formance::run;
 
-__END__
+
 
 =pod
+
+=encoding utf-8
 
 =head1 NAME
 
@@ -21,6 +25,18 @@ performance benchmark runs.
 
 =head1 AUTHOR
 
-Steffen Schwigon, C<< <steffen.schwigon at amd.com> >>
+AMD OSRC Tapper Team <tapper@amd64.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Advanced Micro Devices, Inc..
+
+This is free software, licensed under:
+
+  The (two-clause) FreeBSD License
 
 =cut
+
+
+__END__
+

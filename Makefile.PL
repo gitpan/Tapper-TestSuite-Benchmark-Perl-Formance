@@ -18,7 +18,9 @@ my %WriteMakefileArgs = (
     "ExtUtils::MakeMaker" => "6.30"
   },
   "DISTNAME" => "Tapper-TestSuite-Benchmark-Perl-Formance",
-  "EXE_FILES" => [],
+  "EXE_FILES" => [
+    "bin/tapper-testsuite-benchmark-perlformance"
+  ],
   "LICENSE" => "open_source",
   "NAME" => "Tapper::TestSuite::Benchmark::Perl::Formance",
   "PREREQ_PM" => {
@@ -29,7 +31,7 @@ my %WriteMakefileArgs = (
     "strict" => 0,
     "warnings" => 0
   },
-  "VERSION" => "4.0.1",
+  "VERSION" => "4.0.2",
   "test" => {
     "TESTS" => "t/*.t"
   }

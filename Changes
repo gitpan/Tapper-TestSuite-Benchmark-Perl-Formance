@@ -1,5 +1,8 @@
 Revision history for Tapper-TestSuite-Benchmark-Perl-Formance
 
+4.0.2     2012-08-16
+        - fix script/ -> bin/
+
 4.0.1     2012-05-16
         - verbosity
         - use moreinfor-url
