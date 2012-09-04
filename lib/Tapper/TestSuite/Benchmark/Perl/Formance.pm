@@ -1,11 +1,11 @@
 package Tapper::TestSuite::Benchmark::Perl::Formance;
-# git description: v4.0.1-1-gc969c8d
+# git description: v4.0.2-2-gf79b808
 
 BEGIN {
   $Tapper::TestSuite::Benchmark::Perl::Formance::AUTHORITY = 'cpan:AMD';
 }
 {
-  $Tapper::TestSuite::Benchmark::Perl::Formance::VERSION = '4.0.2';
+  $Tapper::TestSuite::Benchmark::Perl::Formance::VERSION = '4.0.3';
 }
 # ABSTRACT: Tapper - Wrapper for Benchmark::Perl::Formance
 
@@ -172,7 +172,7 @@ sub get_options
         if ($plugins) {
                 $plugins = "--plugins=$plugins";
         } elsif ($ENV{HARNESS_ACTIVE}) {
-                $plugins = "--plugins=Shootout,MooseTS";
+                $plugins = "--plugins=Shootout,DPath";
         }
 
         return {

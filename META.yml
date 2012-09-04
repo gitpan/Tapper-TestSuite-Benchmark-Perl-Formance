@@ -24,7 +24,7 @@ resources:
   bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Tapper-TestSuite-Benchmark-Perl-Formance
   homepage: http://metacpan.org/release/Tapper-TestSuite-Benchmark-Perl-Formance
   repository: git://github.com/amd/Tapper-TestSuite-Benchmark-Perl-Formance.git
-version: 4.0.2
+version: 4.0.3
 x_Dist_Zilla:
   plugins:
     -
