@@ -1,11 +1,11 @@
 package Tapper::TestSuite::Benchmark::Perl::Formance;
-# git description: v4.0.2-2-gf79b808
+# git description: v4.0.3-1-geffc6d8
 
 BEGIN {
   $Tapper::TestSuite::Benchmark::Perl::Formance::AUTHORITY = 'cpan:AMD';
 }
 {
-  $Tapper::TestSuite::Benchmark::Perl::Formance::VERSION = '4.0.3';
+  $Tapper::TestSuite::Benchmark::Perl::Formance::VERSION = '4.1.0';
 }
 # ABSTRACT: Tapper - Wrapper for Benchmark::Perl::Formance
 

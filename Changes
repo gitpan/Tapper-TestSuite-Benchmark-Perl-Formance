@@ -1,5 +1,8 @@
 Revision history for Tapper-TestSuite-Benchmark-Perl-Formance
 
+4.1.0     2012-10-21
+        - sync with release version
+
 4.0.3     2012-09-04
         - other plugins during test
 
