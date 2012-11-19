@@ -1,11 +1,11 @@
 package Tapper::TestSuite::Benchmark::Perl::Formance;
-# git description: v4.0.3-1-geffc6d8
+# git description: v4.1.0-2-gd444784
 
 BEGIN {
-  $Tapper::TestSuite::Benchmark::Perl::Formance::AUTHORITY = 'cpan:AMD';
+  $Tapper::TestSuite::Benchmark::Perl::Formance::AUTHORITY = 'cpan:TAPPER';
 }
 {
-  $Tapper::TestSuite::Benchmark::Perl::Formance::VERSION = '4.1.0';
+  $Tapper::TestSuite::Benchmark::Perl::Formance::VERSION = '4.1.1';
 }
 # ABSTRACT: Tapper - Wrapper for Benchmark::Perl::Formance
 
@@ -262,6 +262,10 @@ Tapper::TestSuite::Benchmark::Perl::Formance - Tapper - Wrapper for Benchmark::P
 You most likely want to run the frontend cmdline tool like this
 
   $ tapper-testsuite-benchmark-perl-formance -vvv
+
+=head1 DESCRIPTION
+
+This is a Tapper wrapper for L<Benchmark::Perl::Formance>.
 
 =head1 FUNCTIONS
 
